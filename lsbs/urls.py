@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
+from index.apps import IndexConfig
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,8 @@ urlpatterns = [
 
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
+]
+
+urlpatterns += [
+    path('index/', include('index.urls'))
 ]
