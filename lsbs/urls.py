@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-from index.apps import IndexConfig
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +27,5 @@ urlpatterns += [
 ]
 
 urlpatterns += [
-    path('index/', include('index.urls'))
+    path('index/', TemplateView.as_view(template_name='registration/home.html'), name = 'home')
 ]
